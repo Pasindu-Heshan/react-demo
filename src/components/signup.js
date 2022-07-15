@@ -51,12 +51,10 @@ class SignUp extends Component {
         } else if (this.state.mobileNumber.length < 10) {
             this.setState({errorType: "LESS_NUMBERS"})
             return;
+        } else if (!(/^(?:7|0|(?:\+94))[0-9]{8,9}$/.test(this.state.mobileNumber))) {
+                this.setState({errorType: "INVALID_NUMBER"})
+                return;
         }
-            // } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(this.state.mobileNumber))) {
-            //
-            //     this.setState({errorType: "INVALID_NUMBER"})
-            //     return;
-        // }
 
         else if (this.state.email.trim() === '') {
             this.setState({errorType: "NULL_EMAIL"})

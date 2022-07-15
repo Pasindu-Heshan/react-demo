@@ -51,7 +51,7 @@ class SignUp extends Component {
         } else if (this.state.mobileNumber.length < 10) {
             this.setState({errorType: "LESS_NUMBERS"})
             return;
-        } else if (!(/^(?:7|0|(?:\+94))[0-9]{8,9}$/.test(this.state.mobileNumber))) {
+        } else if (!(/^(?:7|0|(?:\+94))[0-9]{8,9}$/.test(this.state.mobileNumber.trim()))) {
                 this.setState({errorType: "INVALID_NUMBER"})
                 return;
         }
